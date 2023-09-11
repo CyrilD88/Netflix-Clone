@@ -1,0 +1,32 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    padding: 12px 4%;
+    font-size: 0.9rem;
+    color: #fff;
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+    &--black{
+        background-color: #000;
+    }
+    &__burger{
+        cursor: pointer;
+        color: #fff;
+        margin-right: 1rem;
+        @media screen and (min-width:768px){
+          display: none;  
+        }
+    }
+    &__logo{
+        max-width: 100px;
+    }
+    &__avatar{
+        max-width: 30px;
+    }
+}
