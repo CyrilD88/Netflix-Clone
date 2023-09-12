@@ -3,7 +3,7 @@ import "./Nav.scss";
 
 const Nav = () => {
   return (
-    <div className="nav nav--black">
+    <div className="nav show nav--black">
       <button className="nav__burger"> ---</button>
       <img src="./images/logo.png" className="nav__logo" alt="Netflix" />
       <nav className="nav__links">
