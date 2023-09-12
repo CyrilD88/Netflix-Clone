@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.scss";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -6,8 +6,16 @@ import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 
 const Nav = () => {
+  const [navBlack, setNavBlack] = useState(false);
+  const transitionNav = () => {
+    window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
+  };
+
+  useState(() => {
+    document.addEventListener("scroll", transitionNav);
+  });
   return (
-    <div className="nav  nav--black">
+    <div className={`nav ${navBlack && "nav--black"}`}>
       <button className="nav__burger">
         {" "}
         <MenuIcon />
