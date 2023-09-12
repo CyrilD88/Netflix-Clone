@@ -1,6 +1,9 @@
 import React from "react";
 import "./Nav.scss";
 import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 
 const Nav = () => {
   return (
@@ -23,16 +26,16 @@ const Nav = () => {
       </nav>
       <div className="nav__actions">
         <a href="/" className="nav__action">
-          search
+          <SearchIcon />
         </a>
         <a href="/" className="nav__action">
-          direct
+          Direct
         </a>
         <a href="/" className="nav__action">
-          gift
+          <CardGiftcardIcon />
         </a>
         <a href="/" className="nav__action">
-          notif
+          <NotificationsIcon />
         </a>
         <a href="/" className="nav__action">
           <img
