@@ -24,13 +24,29 @@ const Banner = () => {
     fetchData();
   }, []);
 
+  // Fonction pour raccourcir le texte de description (n= nombre d'éléments qu'on veut)
+  function truncateText(string, n) {
+    return string?.length > n
+      ? string.substr(0, n - 1) + "..."
+      : "No Description";
+  }
+
+  // Création de la const pour injecter l'image
+  const bannerStyle = {
+    backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+  };
+
   return (
-    <header className="banner">
+    <header className="banner" style={bannerStyle}>
       <div className="banner__content">
         <h1 className="banner__title">
-          {movie.title || movie?.original_title}
+          {movie.title || movie?.name || movie?.original_title}
         </h1>
-        <p className="banner__description">{movie?.overview}</p>
+        <p className="banner__description">
+          {truncateText(movie?.overview, 100)}
+        </p>
         <div className="banner__buttons">
           <button className="banner__button banner__button--play">
             <PlayArrowIcon /> Lecture
